@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         btnReset1 = findViewById(R.id.btnReset);
         viewTotal = findViewById(R.id.totalB);
         viewIdv = findViewById(R.id.idvPays);
-
         btnSplit1.setOnClickListener(new View.OnClickListener(){
             public void onClick (View v){
                 Double totalB = 0.00;
@@ -61,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
                     if (etAmt.getText().toString().length() == 0) {
                         Toast.makeText(MainActivity.this, "Please enter amount", Toast.LENGTH_LONG).show();
                     }
-                    if (etPax.getText().toString().length() == 0) {
+                    if (etPax.getText().toString().length() == 0) { // not sure why but when I test this out, the app would crash,
+                        // I will try to resolve this (same for the next if statement)
                         Toast.makeText(MainActivity.this, "Please enter pax", Toast.LENGTH_LONG).show();
                     }
                     if (etAmt.getText().toString().length() == 0 && etPax.getText().toString().length() == 0){
