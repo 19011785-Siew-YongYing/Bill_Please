@@ -57,18 +57,18 @@ public class MainActivity extends AppCompatActivity {
                         totalB = Double.parseDouble(etAmt.getText().toString()) * 1.17;
                     }
                 }
-                else if (etAmt.getText().toString().length() == 0 && etPax.getText().toString().length() > 0) { // validation part 2
-                    Toast.makeText(MainActivity.this, "Please enter amount", Toast.LENGTH_LONG).show();
-                }
-
-                else if (etAmt.getText().toString().length() > 0 && etPax.getText().toString().length() == 0) {
+                else { // validation part 2
+                    if (etAmt.getText().toString().length() == 0 && etPax.getText().toString().length() > 0) {
+                        Toast.makeText(MainActivity.this, "Please enter amount", Toast.LENGTH_LONG).show();
+                    }
+                    if (etAmt.getText().toString().length() > 0 && etPax.getText().toString().length() == 0) {
                         Toast.makeText(MainActivity.this, "Please enter pax", Toast.LENGTH_LONG).show();
+                    }
+                    if (etAmt.getText().toString().length() == 0 && etPax.getText().toString().length() == 0){
+                        Toast.makeText(MainActivity.this, "Please enter Amount and Pax number", Toast.LENGTH_LONG).show();
+                    }
                 }
 
-                else if (etAmt.getText().toString().length() == 0 && etPax.getText().toString().length() == 0){
-                        Toast.makeText(MainActivity.this, "Please enter Amount and Pax number", Toast.LENGTH_LONG).show();
-                }
-                
                 if (etDiscount.getText().toString().length() > 0) {
                     totalB = totalB * (1 - Double.parseDouble(etDiscount.getText().toString()) / 100);
                 }
