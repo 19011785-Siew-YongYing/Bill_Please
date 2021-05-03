@@ -58,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 else { // validation part 2
-                    if (etAmt.getText().toString().length() == 0 && etPax.getText().toString().length() > 0) {
+                    if (etAmt.getText().toString().length() == 0) {
                         Toast.makeText(MainActivity.this, "Please enter amount", Toast.LENGTH_LONG).show();
                     }
-                    if (etAmt.getText().toString().length() > 0 && etPax.getText().toString().length() == 0) {
+                    if (etPax.getText().toString().length() == 0) {
                         Toast.makeText(MainActivity.this, "Please enter pax", Toast.LENGTH_LONG).show();
                     }
                     if (etAmt.getText().toString().length() == 0 && etPax.getText().toString().length() == 0){
